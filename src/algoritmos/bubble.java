@@ -1,4 +1,4 @@
-package bubble;
+package algoritmos;
 
 import java.text.DecimalFormat;
 import java.util.Random;
@@ -7,7 +7,7 @@ class Bubble {
 
     public static void main(String[] args) {
         
-        int array[] = new int[9000];
+        int array[] = new int[66666];
         Random r = new Random();
         
         for(int x=0; x < array.length; x++){

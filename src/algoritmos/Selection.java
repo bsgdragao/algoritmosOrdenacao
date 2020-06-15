@@ -1,14 +1,13 @@
-package insertion;
+package algoritmos;
 
 import java.text.DecimalFormat;
 import java.util.Random;
 
-public class Insertion {
+public class Selection {
 
-    public static void main(String[] args) {
-        
+      public static void main(String[] args) {
+     
         int array[] = new int[9000];
-        
         Random r = new Random();
         
         for(int x=0; x < array.length; x++){
@@ -17,33 +16,39 @@ public class Insertion {
         
         long inicio = System.currentTimeMillis();  
           
-        insertionSort(array);
+        selectionSort(array);
         System.out.println("");
         
         long fim  = System.currentTimeMillis();
         double tempo = ( fim - inicio );
         
-        tempo = tempo / 1000;
+          tempo = tempo / 1000;
           DecimalFormat df = new DecimalFormat("#0.000");
           System.out.println("Tempo decorrido: " + df.format(tempo) + " segundos");
-        
-        
+
     }
-    public static void insertionSort(int[] array){
-        for (int i = 1; i < array.length ; i++) {
-		int key = array[i];
-		int j = i - 1;
-		while (j >= 0 && key < array[j]) {
-			int temp = array[j];
-			array[j] = array[j + 1];
-			array[j + 1] = temp;
-			j--;
+      public static void selectionSort(int[] array){
+                  int i, j, minValue, minIndex, temp = 0;
+
+	for (i = 0; i < array.length; i++) {
+		minValue = array[i];
+		minIndex = i;
+		for (j = i; j < array.length; j++) {
+			if (array[j] < minValue) {
+				minValue = array[j];
+				minIndex = j;
+			}
+		}
+		if (minValue < array[i]) {
+			temp = array[i];
+			array[i] = array[minIndex];
+			array[minIndex] = temp;
 		}
 	}
-        System.out.println("Algoritmo Insertion Sort:");
+
+        System.out.println("Algoritmo Selection Sort:");
         for (int ordem : array) {
             System.out.print(ordem + " ");
-        }       
-    }
- }
-
+        }
+      }
+}

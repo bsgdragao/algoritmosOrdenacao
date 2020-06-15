@@ -1,4 +1,4 @@
-package merge;
+package algoritmos;
 
 import java.text.DecimalFormat;
 import java.util.Random;
